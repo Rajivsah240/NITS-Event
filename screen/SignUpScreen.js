@@ -30,7 +30,7 @@ const SignUpScreen = ({ navigation }) => {
     "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"
   );
   const [imageURL, setImageURL] = useState("");
-  const [uploaded, setUploaded] = useState(true);
+  const [uploaded, setUploaded] = useState(false);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const loadFontsAsync = async () => {
@@ -46,7 +46,7 @@ const SignUpScreen = ({ navigation }) => {
     return null;
   }
 
-  const handleImageUpload = async () => {
+  const handleImagePicker = async () => {
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -94,7 +94,8 @@ const SignUpScreen = ({ navigation }) => {
   const handleSignUp = async () => {
     try {
       if (password !== confirmPassword) {
-        throw new Error("Passwords don't match");
+        Alert.alert("Passwords don't match");
+        return;
       }
 
       if (
@@ -106,10 +107,10 @@ const SignUpScreen = ({ navigation }) => {
         !department ||
         !scholarID
       ) {
-        throw new Error("Complete the Form!!");
+        Alert.alert("Complete the Form!!");
+        return;
       }
 
-      // Create a new user in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
         FIREBASE_AUTH,
         email,
@@ -128,7 +129,7 @@ const SignUpScreen = ({ navigation }) => {
         scholarID,
       });
 
-      console.log("SignUp successful!");
+      Alert.alert("SignUp successful!");
       navigation.navigate("LoginScreen");
     } catch (error) {
       Alert.alert(error.message);
@@ -139,36 +140,37 @@ const SignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Student Sign Up</Text>
-      {/* <Divider style={{marginVertical:20}} horizontalInset={true}/> */}
-      {profilePic && (
-        <View style={{ alignItems: "center" }}>
-          <Avatar.Image
-            source={{ uri: profilePic }}
-            style={styles.imagePreview}
-          />
-          <TouchableOpacity
-            style={styles.imageUploadButton}
-            onPress={handleImageUpload}
-          >
-            <Text style={styles.imageUploadText}>Pick a Profile Image</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#F1F0F9",
-              marginVertical: 0,
-              borderWidth: 0.2,
-            }}
-            onPress={uploadImage}
-          >
-            <Text style={{fontSize:8}}>Upload Image</Text>
-          </TouchableOpacity>
+
+      <View style={{ alignItems: "center" }}>
+        <Avatar.Image
+          source={{ uri: profilePic }}
+          style={styles.imagePreview}
+        />
+        <TouchableOpacity
+          style={styles.imageUploadButton}
+          onPress={handleImagePicker}
+        >
+          <Text style={styles.imageUploadText}>Pick an Image</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#F1F0F9",
+            marginVertical: 0,
+            borderWidth: 0.2,
+          }}
+          onPress={uploadImage}
+        >
+          <Text style={{ fontSize: 8 }}>Upload Image</Text>
+        </TouchableOpacity>
+        {!uploaded ? (
           <Text style={{ fontSize: 8, marginVertical: 10 }}>
             (Upload First to SignUp!!)
           </Text>
-          
-        </View>
-      )}
-      {}
+        ) : (
+          <Text style={{ fontSize: 8, marginVertical: 10 }}>Uploaded</Text>
+        )}
+      </View>
+
       <TextInput
         placeholder="Name"
         placeholderTextColor={"#A9B2B6"}
@@ -254,14 +256,14 @@ const styles = StyleSheet.create({
     fontFamily: "TekoLight",
   },
   input: {
-    width: "100%",
+    width: "95%",
     height: 35,
     borderColor: "#A9B2B6",
     borderWidth: 0.5,
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 20,
-    color: "#A9B2B6",
+    color: "#000",
   },
   imageUploadButton: {
     backgroundColor: "#F1F0F9",
@@ -276,9 +278,6 @@ const styles = StyleSheet.create({
     fontFamily: "Convergence",
   },
   imagePreview: {
-    width: 50,
-    height: 50,
-    resizeMode: "contain",
     marginVertical: 10,
   },
   signupBtn: {

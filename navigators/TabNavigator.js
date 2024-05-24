@@ -6,7 +6,6 @@ import HomeScreen from "../screen/HomeScreen";
 import EventScreen from "../screen/EventScreen";
 import ProfileScreen from "../screen/ProfileScreen";
 
-import { BlurView } from "expo-blur";
 
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";

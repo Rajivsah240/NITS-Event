@@ -7,12 +7,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { parseISO, format } from "date-fns";
+
 import { customFonts } from "../Theme";
-import { FontAwesome5 } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
-import { EvilIcons } from "@expo/vector-icons";
-import { Octicons } from "@expo/vector-icons";
 import * as Font from "expo-font";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { FIRESTORE_DB } from "../config/firebase";

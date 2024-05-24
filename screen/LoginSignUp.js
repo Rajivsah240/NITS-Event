@@ -11,7 +11,7 @@ import { customFonts } from "../Theme";
 const LoginSignUp = ({ navigation }) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const handleStudentSignin = () => {
-    navigation.replace("LoginScreen");
+    navigation.navigate("LoginScreen");
   };
 
   const handleClubSignin = () => {

@@ -3,16 +3,12 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Linking,
   ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { collection, getDoc, query, doc, updateDoc } from "firebase/firestore";
 import { FIRESTORE_DB } from "../config/firebase";
-import * as Font from "expo-font";
 import { Avatar, Divider } from "react-native-paper";
-import { customFonts } from "../Theme";
-import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { useAuth } from "../AuthContext";
 

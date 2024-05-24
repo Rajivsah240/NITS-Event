@@ -33,7 +33,7 @@ const ClubSignUpScreen = ({ navigation }) => {
   const [instaHandle, setInstaHandle] = useState("");
 
   const [imageURL, setImageURL] = useState("");
-  const [uploaded, setUploaded] = useState(true);
+  const [uploaded, setUploaded] = useState(false);
 
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -50,7 +50,7 @@ const ClubSignUpScreen = ({ navigation }) => {
     return null;
   }
 
-  const handleImageUpload = async () => {
+  const handleImagePicker = async () => {
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -100,7 +100,6 @@ const ClubSignUpScreen = ({ navigation }) => {
       if (password !== confirmPassword) {
         throw new Error("Passwords don't match");
       }
-      
 
       if (
         !clubEmail ||
@@ -112,7 +111,8 @@ const ClubSignUpScreen = ({ navigation }) => {
         !fbHandle ||
         !instaHandle
       ) {
-        throw new Error("Complete the Form!!");
+        Alert.alert("Complete the Form!!");
+        return;
       }
 
       // Create a new user in Firebase Authentication
@@ -134,7 +134,7 @@ const ClubSignUpScreen = ({ navigation }) => {
         instaHandle,
       });
 
-      console.log("Club SignUp successful!");
+      Alert.alert("Club SignUp successful!");
       navigation.navigate("ClubLogin");
     } catch (error) {
       Alert.alert(error.message);
@@ -145,31 +145,34 @@ const ClubSignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Club Sign Up</Text>
-      {/* <Divider style={{marginVertical:20}} horizontalInset={true}/> */}
-      {clubImage && (
-        <View style={{ alignItems: "center" }}>
-          <Avatar.Image source={{ uri: clubImage }} style={styles.imagePreview} />
-          <TouchableOpacity
-            style={styles.imageUploadButton}
-            onPress={handleImageUpload}
-          >
-            <Text style={styles.imageUploadText}>Pick an Image</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#F1F0F9",
-              marginVertical: 0,
-              borderWidth: 0.2,
-            }}
-            onPress={uploadImage}
-          >
-            <Text style={{fontSize:8}}>Upload Image</Text>
-          </TouchableOpacity>
+
+      <View style={{ alignItems: "center" }}>
+        <Avatar.Image source={{ uri: clubImage }} style={styles.imagePreview} />
+        <TouchableOpacity
+          style={styles.imageUploadButton}
+          onPress={handleImagePicker}
+        >
+          <Text style={styles.imageUploadText}>Pick an Image</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#F1F0F9",
+            marginVertical: 0,
+            borderWidth: 0.2,
+          }}
+          onPress={uploadImage}
+        >
+          <Text style={{ fontSize: 8 }}>Upload Image</Text>
+        </TouchableOpacity>
+        {!uploaded ? (
           <Text style={{ fontSize: 8, marginVertical: 10 }}>
             (Upload First to SignUp!!)
           </Text>
-        </View>
-      )}
+        ) : (
+          <Text style={{ fontSize: 8, marginVertical: 10 }}>Uploaded</Text>
+        )}
+      </View>
+
       <TextInput
         placeholder="Name"
         placeholderTextColor={"#A9B2B6"}
@@ -199,15 +202,7 @@ const ClubSignUpScreen = ({ navigation }) => {
         onChangeText={setConfirmPassword}
         value={confirmPassword}
         style={styles.input}
-        
       />
-      {/* <TextInput
-        placeholder="Club Image URL"
-        onChangeText={setClubImage}
-        value={clubImage}
-        style={styles.input}
-      /> */}
-
       <TextInput
         placeholder="Club Description"
         placeholderTextColor={"#A9B2B6"}
@@ -231,9 +226,19 @@ const ClubSignUpScreen = ({ navigation }) => {
         style={styles.input}
       />
 
-      <TouchableOpacity style={styles.signUpBtn} onPress={handleSignUp}>
-        <Text style={styles.buttonText}>Sign Up</Text>
-      </TouchableOpacity>
+      {uploaded ? (
+        <TouchableOpacity style={styles.signUpBtn} onPress={handleSignUp}>
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          disabled={true}
+          style={styles.signUpBtn}
+          onPress={handleSignUp}
+        >
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -260,7 +265,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 20,
-    color: "#A9B2B6",
+    color: "#000",
   },
   imageUploadButton: {
     backgroundColor: "#F1F0F9",

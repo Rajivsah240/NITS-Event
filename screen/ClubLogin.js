@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -9,7 +9,6 @@ import {
   Alert,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 import * as Font from "expo-font";
 import { customFonts } from "../Theme";
 import { useAuth } from "../AuthContext";
@@ -18,17 +17,16 @@ const ClubLogin = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { loginClub, loggedIn,currentUser } = useAuth();
+  const { loginClub, loggedIn, currentUser } = useAuth();
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const loadFontsAsync = async () => {
     await Font.loadAsync(customFonts);
     setFontsLoaded(true);
   };
- 
-  
+
   useEffect(() => {
-    if (currentUser =='Club' && loggedIn) {
+    if (currentUser == "Club" && loggedIn) {
       navigation.navigate("ClubHomeScreen");
     }
     loadFontsAsync();
@@ -89,14 +87,24 @@ const ClubLogin = ({ navigation }) => {
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.googleButton} onPress={() => {}}>
-          <AntDesign name="google" size={24} color="#dd4b39" />
-        </TouchableOpacity>
+        {/* <TouchableOpacity style={styles.googleButton} onPress={() => {}}>
+          <Image
+            source={require('../assets/icons/Google_logo.png')}
+            style={{ width: 40, height: 40 }}
+          />
+        </TouchableOpacity> */}
 
         <TouchableOpacity
           onPress={() => navigation.navigate("ClubSignUpScreen")}
         >
-          <Text style={{ color: "#71bbde",fontFamily:'Teko',fontSize:20 }}>
+          <Text
+            style={{
+              color: "#71bbde",
+              fontFamily: "Teko",
+              fontSize: 20,
+              marginVertical: 10,
+            }}
+          >
             New Here? Click Here to Sign Up First.
           </Text>
         </TouchableOpacity>
@@ -122,27 +130,26 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginTop: 10,
-    color:'#000000',
-    fontFamily:'TekoSemiBold'
+    color: "#000000",
+    fontFamily: "TekoSemiBold",
   },
   formContainer: {
     marginTop: 20,
-    alignItems:'center'
+    alignItems: "center",
   },
   input: {
-    width:'100%',
+    width: "100%",
     height: 40,
     borderColor: "#F1F0F9",
     borderWidth: 1,
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 20,
-    color:'#000000'
+    color: "#000000",
   },
   passwordInputContainer: {
     flexDirection: "row",
     alignItems: "center",
-    
   },
   passwordInput: {
     flex: 1,
@@ -152,20 +159,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 20,
-    color:'#000000'
+    color: "#000000",
   },
   toggleButton: {
     marginLeft: -25,
-    top:-10,
-    left:-10
+    top: -10,
+    left: -10,
   },
   loginButton: {
     backgroundColor: "#F1F0F9",
     padding: 10,
-    width:"50%",
+    width: "50%",
     borderRadius: 20,
     alignItems: "center",
-    justifyContent:'center',
+    justifyContent: "center",
     marginBottom: 10,
   },
   googleButton: {
@@ -177,7 +184,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "black",
     fontSize: 16,
-    fontFamily:'Convergence'
+    fontFamily: "Convergence",
   },
 });
 

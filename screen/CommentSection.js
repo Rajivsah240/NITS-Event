@@ -18,6 +18,7 @@ import { useAuth } from "../AuthContext";
 import { getDoc, doc, updateDoc, Timestamp } from "firebase/firestore";
 import { FIRESTORE_DB } from "../config/firebase";
 
+
 const CommentSection = ({ navigation,route }) => {
   const [comment, setComment] = useState("");
   const { user,currentUser } = useAuth();
@@ -185,6 +186,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // height: "50%",
+    backgroundColor: "transparent",
   },
   commentButton: {
     fontSize: 16,

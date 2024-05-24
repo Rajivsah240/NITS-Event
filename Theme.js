@@ -1,5 +1,3 @@
-
-
 export const customFonts = {
   Convergence: require("./assets/fonts/Convergence-Regular.ttf"),
   Monoton: require("./assets/fonts/Monoton-Regular.ttf"),

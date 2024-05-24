@@ -4,9 +4,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./navigators/TabNavigator";
 import ProfileScreen from "./screen/ProfileScreen";
 import EventScreen from "./screen/EventScreen";
-import { StatusBar } from "expo-status-bar";
+
 import { SafeAreaView, StyleSheet } from "react-native";
-import LinearGradient from "expo-linear-gradient";
+
 import WelcomeScreen from "./screen/WelcomeScreen";
 import LoginScreen from "./screen/LoginScreen";
 import LoginSignUp from "./screen/LoginSignUp";
@@ -21,11 +21,11 @@ import DetailScreenStudent from "./screen/DetailScreenStudent";
 import EventRegistrationScreen from "./screen/EventRegistrationScreen";
 import RegisteredEvents from "./screen/RegisteredEvents";
 import ClubDetails from "./screen/ClubDetails";
-import Clubs from "./components/Clubs";
+
 import ClubEventDetails from "./screen/ClubEventDetails";
 import ModifyEventScreen from "./screen/ModifyEventScreen";
 import EventNotificationEditScreen from "./screen/EventNotificationEditScreen";
-import CurrentFeedEvents from "./components/CurrentFeedEvents";
+
 import CommentSection from "./screen/CommentSection";
 import EditProfileStudent from "./screen/EditProfileStudent";
 import BookmarkEvents from "./screen/BookmarkEvents";
@@ -118,7 +118,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginTop:10,
     backgroundColor: "#f4f5ff",
   },
 });
