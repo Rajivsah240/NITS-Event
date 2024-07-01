@@ -1,6 +1,6 @@
 <div style="font-family: Convergence, sans-serif; line-height: 1.6; margin: 20px;">
     <div style="text-align: center;">
-        <img src="Readme/img/header.png" style="width: 60%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px;">
+        <img src="Readme/img/header.png" style="width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px;">
     </div>
     <div style="display: block; text-align: center; background-color: #2c3e50; padding: 10px; margin: 20px 0;">
         <b style="color: #fff; font-size: 2em;">NITS EVENT APP</b>
@@ -45,8 +45,8 @@
     <div style="margin-bottom: 20px;">
         <h2 style="color: #2a3eff; font-size: 1.5em; margin-top: 20px;">Start Screen</h2>
         <div style="text-align: center;">
-            <img src="./Readme/img/startscreen_1.jpg" alt="Start Screen Image 1" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
-            <img src="./Readme/img/startscreen_2.jpg" alt="Start Screen Image 2" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+            <img src="./Readme/img/startscreen_1.jpg" alt="Start Screen Image 1" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+            <img src="./Readme/img/startscreen_2.jpg" alt="Start Screen Image 2" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
         </div>
     </div>
     <div style="margin-bottom: 20px;">
@@ -58,9 +58,9 @@
             <li><strong>Notifications:</strong> Send event-related notifications to registered students.</li>
         </ul>
         <div style="text-align: center;">
-            <img src="./Readme/img/clubscreen_1.jpg" alt="Club Side Image 1" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
-            <img src="./Readme/img/clubscreen_2.jpg" alt="Club Side Image 2" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
-            <img src="./Readme/img/clubscreen_3.jpg" alt="Club Side Image 3" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+            <img src="./Readme/img/clubscreen_1.jpg" alt="Club Side Image 1" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+            <img src="./Readme/img/clubscreen_2.jpg" alt="Club Side Image 2" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+            <img src="./Readme/img/clubscreen_3.jpg" alt="Club Side Image 3" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
         </div>
     </div>
     <div style="margin-bottom: 20px;">
@@ -76,8 +76,8 @@
                     <li><strong>Share:</strong> Recommend the event to friends (through other apps).</li>
                 </ul>
                 <div style="text-align: center;">
-                    <img src="./Readme/img/userscreen_1.jpg" alt="Student Side Image 1" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
-                    <img src="./Readme/img/userscreen_2.jpg" alt="Student Side Image 2" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+                    <img src="./Readme/img/userscreen_1.jpg" alt="Student Side Image 1" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+                    <img src="./Readme/img/userscreen_2.jpg" alt="Student Side Image 2" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
                 </div>
             </li>
             <li><strong>Search</strong>
@@ -86,8 +86,8 @@
                     <li><strong>Club Search:</strong> Explore all registered clubs and societies within the college.</li>
                 </ul>
                 <div style="text-align: center;">
-                    <img src="./Readme/img/userscreen_3.jpg" alt="Search Image 1" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
-                    <img src="./Readme/img/userscreen_4.jpg" alt="Search Image 2" style="max-width: 30%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+                    <img src="./Readme/img/userscreen_3.jpg" alt="Search Image 1" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
+                    <img src="./Readme/img/userscreen_4.jpg" alt="Search Image 2" style="max-width: 30%; height: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; margin: 10px;">
                 </div>
             </li>
         </ul>
