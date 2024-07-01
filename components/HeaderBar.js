@@ -25,7 +25,7 @@ const HeaderBar = ({ navigation,onShowBookmarks, onEditProfile, onSignOut }) => 
   const { logout, loggedIn, user } = useAuth();
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
-  const slideAnimation = new Animated.Value(-300); // Initial position outside the screen
+  const slideAnimation = new Animated.Value(-300);
   const overlayOpacity = useRef(new Animated.Value(0)).current;
   const name = user ? user.name : "";
   const email = user ? user.email : "";
@@ -59,14 +59,14 @@ const HeaderBar = ({ navigation,onShowBookmarks, onEditProfile, onSignOut }) => 
 
       setRegisteredEvents(registeredEventsArray);
       setRegisteredEventsCount(registeredEventsArray.length);
-      // setDataFetched(true); 
+       
     } catch (error) {
       console.error("Error fetching registered events count: ", error);
     }
   };
   useEffect(()=>{
     fetchRegisteredEventsCount();
-    // console.log("Reg Event",registeredEvents)
+    
   },[])
 
   useEffect(() => {
@@ -143,7 +143,7 @@ const HeaderBar = ({ navigation,onShowBookmarks, onEditProfile, onSignOut }) => 
         <ProfilePic />
       </TouchableOpacity>
       <Text style={styles.HeaderText}>Hello, {name} !</Text>
-      <GradientBGIcon name="menu" color="#A9B2B6" size="15" />
+      
       {menuVisible && (
         <>
           <TouchableWithoutFeedback onPress={handleOverlayPress}>

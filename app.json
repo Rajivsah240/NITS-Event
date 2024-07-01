@@ -4,7 +4,7 @@
     "slug": "NITSEvent",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icons/icon.jpg",
+    "icon": "./assets/icons/icon.png",
     "userInterfaceStyle": "light",
     "assetBundlePatterns": [
       "assets/*",
@@ -15,7 +15,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/icon.jpg",
+        "foregroundImage": "./assets/icons/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.rajivsah240.NITSEvent"
