@@ -2,9 +2,6 @@
     <div style="text-align: center;">
         <img src="Readme/img/header.png" style="width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px;">
     </div>
-    <div style="display: block; text-align: center; justify-content: center; align-items: center;">
-        <p style="color: #fff; font-size: 2em;">NITS EVENT APP</p>
-    </div>
     <div style="margin-bottom: 20px;">
         <h2 style="color: #2a3eff; font-size: 1.5em; margin-top: 20px;">Overview</h2>
         <p style="margin-top: 10px;">NITS EVENT is a dynamic application tailored exclusively for the vibrant community of NIT Silchar students. It serves as the central hub for all campus events, seamlessly connecting clubs, societies, and students, ensuring nobody misses out on the excitement.</p>
